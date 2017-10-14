@@ -7,10 +7,10 @@ html, body {
 }
 
 #container {
-  max-width: 1000px;
-  margin: 30px auto;
+  max-width: 900px;
+  margin: 40px auto;
   background-color: white;
-  padding: 30px 50px;
+  padding: 30px 70px;
   box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
 }
 
@@ -84,22 +84,26 @@ i.fa-envelope {
   font-size: 30px;
   margin-bottom: 40px;
 }
+.content-header .fa {
+  margin-right: 5px;
+  color: var(--main-color);
+}
 
-.content-educationRow {
+.content-infoRow {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
   border-bottom: 1px dashed #ddd;
   align-items: center;
-  padding: 0 50px 20px 0;
+  padding: 0 0px 20px 0;
 }
 
-.educationRow-education {
+.infoRow-education {
   line-height: 25px;
   font-size: 16px;
 }
 
-.educationRow-educationYear {
+.infoRow-educationYear {
   font-weight: 400;
 }
 
@@ -109,4 +113,5 @@ i.fa-envelope {
 }
 .education-secondaryHeader {
   font-style: italic;
+  color: #888;
 }
