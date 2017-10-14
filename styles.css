@@ -1,0 +1,112 @@
+html, body {
+  font-family: 'Lato';
+  font-weight: 300;
+  background: url('http://api.thumbr.it/whitenoise-361x370.png?background=f9f9f9&noise=a1a1a1&density=100&opacity=9');
+  color: #888;
+  --main-color: #00CD98;
+}
+
+#container {
+  max-width: 1000px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 30px 50px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+}
+
+.header-infoName {
+  margin-left: 20px;
+}
+.header-name {
+  font-size: 40px;
+  color: var(--main-color);
+  font-style: italic;
+}
+
+.header-profilePhoto {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.header-profilePhoto img {
+  width: 170px;
+  transform: translate(-20%, -10%);
+  height: auto;
+  filter: brightness(110%) saturate(70%);
+}
+
+.header-cv {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 5.6px;
+  margin-left: 3px;
+  color: #aaa;
+  margin-top: 5px;
+}
+.header-infoList {
+  list-style-type: none;
+  line-height: 30px;
+}
+
+.infoList-item {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.infoList-item i {
+  margin-right: 8px;
+  color: var(--main-color);
+  font-size: 18px;
+  line-height: 30px;
+}
+
+i.fa-envelope {
+  font-size: 14px;
+}
+
+.content {
+  margin: 50px 0;
+}
+
+.content-header {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.content-educationRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
+  align-items: center;
+  padding: 0 50px 20px 0;
+}
+
+.educationRow-education {
+  line-height: 25px;
+  font-size: 16px;
+}
+
+.educationRow-educationYear {
+  font-weight: 400;
+}
+
+.education-header {
+  font-weight: 400;
+  color: #666;
+}
+.education-secondaryHeader {
+  font-style: italic;
+}
