@@ -77,12 +77,16 @@ i.fa-envelope {
 }
 
 .content {
-  margin: 50px 0;
+  margin-top: 50px;
 }
 
 .content-header {
   font-size: 30px;
   margin-bottom: 40px;
+}
+
+.content-header--right{
+  text-align: right;
 }
 .content-header .fa {
   margin-right: 5px;
@@ -114,4 +118,79 @@ i.fa-envelope {
 .education-secondaryHeader {
   font-style: italic;
   color: #888;
+}
+
+.content-infoBlock {
+  display: flex;
+  line-height: 26px;
+}
+
+.content-infoBlock--grid {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 50px;
+}
+
+.infoBlock-row {
+  display: flex;
+  justify-content: center;
+}
+
+.infoBlock-block {
+  text-align: justify;
+  margin-right: 20px;
+}
+
+.infoBlock-block p {
+  margin-top: 0;
+}
+
+.twoColumn .content {
+  width: 50%;
+}
+
+.twoColumn .content:last-child .infoBlock-block {
+  margin-right: 0px;
+}
+
+.twoColumn {
+  display: flex;
+}
+
+.infoBlock-image {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s ease all;
+  border-radius: 50%;
+  margin: 5px;
+}
+.infoBlock-image:hover {
+  transform: scale(1.3);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.infoBlock-skillImage {
+  max-width: 100%;
+  height: auto;
+  transition: 0.3s ease all;
+}
+
+.infoBlock-image--big {
+  width: 100px;
+  height: 100px;
+}
+
+.infoBlock-image--small {
+  width: 40px;
+  height: 40px;
 }
