@@ -126,9 +126,12 @@ i.fa-envelope {
 }
 
 .content-infoBlock--grid {
-  height: 300px;
-  position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 70px;
 }
 
 .infoBlock-row {
@@ -166,78 +169,99 @@ i.fa-envelope {
   width: 90px;
   height: 90px;
   transition: 0.3s ease all;
+  margin: 3px;
   overflow: hidden;
-  position: absolute;
   border-radius: 50%;
 }
+
 .infoBlock-image:hover {
-  transform: scale(1.35);
   z-index: 10;
-  cursor: pointer;
+  width: 110px;
+  height: 110px;
+  cursor: default;
+}
+
+.infoBlock-image:hover .infoBlock-skillImage{
+  filter: grayscale(0%) brightness(110%);
+}
+
+.infoBlock-image--big:hover {
+  width: 120px;
+  height: 120px;
+}
+
+.infoBlock-image--small:hover {
+  width: 90px;
+  height: 90px;
 }
 
 .infoBlock-skillImage {
   max-width: 80%;
   height: auto;
   transition: 0.3s ease all;
+  filter: grayscale(90%) brightness(115%);
 }
 
 .infoBlock-image--big {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
 }
 
 .infoBlock-image--small {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
 }
 
-.jsImage {
-  left: 200px;
-  top: 100px;
-  max-width: 100% !important;
+#relayImage {
+  top: 28px;
+  left: 8px;
 }
 
-.relayImage {
-  left: 160px;
-  top: 200px;
-}
-.reduxImage {
-  left: 110px;
-  top: 130px;
-}
-
-.reactImage {
+#cssImage {
   top: 60px;
-  left: 300px;
-}
-.cssImage {
-  top: 50px;
-  left: 200px;
+  right: -35px;
 }
 
-.htmlImage {
-  left: 260px;
-  top: 50px;
+#gitImage {
+  top: -30px;
+  left: 30px;
 }
 
-.rubyImage {
-  left: 310px;
-  top: 160px;
-  transform: scale(0.7);
+#reactImage {
+  top: 15px;
 }
 
-.jqueryImage {
-  left: 240px;
-  top: 190px;
+#htmlImage {
+  top: 35px;
+  left: 5px;
 }
 
-.gitImage {
-  left: 360px;
-  top: 150px;
+#rubyImage {
+  top: -10px;
+  filter: grayscale(100%) brightness(185%);
 }
 
-.mobxImage {
-  left: 150px;
-  top: 75px;
+#rubyImage:hover {
+  filter: grayscale(0%) brightness(100%);
+}
+
+.skillImage-jsImage {
+  max-width: 100%;
+}
+
+#skillInfo {
+  color: var(--main-color);
+  font-size: 25px;
+  margin-top: 10px;
+  padding-left: 20px;
+  opacity: 0;
+  position: relative;
+  top: 10px;
+  font-weight: 400;
+}
+
+.skillInfo-animateContent {
+  top: 0px !important;
+  transition: 0.2s ease-in-out all !important;
+  opacity: 1 !important;
 }
