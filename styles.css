@@ -2,15 +2,22 @@ html, body {
   font-family: 'Lato';
   font-weight: 300;
   background: url('http://api.thumbr.it/whitenoise-361x370.png?background=f9f9f9&noise=a1a1a1&density=100&opacity=9');
-  color: #888;
-  --main-color: #00CD98;
+  --gray: #777;
+  --dark-gray: #444;
+  --light-gray: #aaa;
+  --main-color: #00daa2;
+  color: var(--gray);
+}
+
+.text--main {
+  color: #01b083 !important;
 }
 
 #container {
   max-width: 900px;
   margin: 40px auto;
   background-color: white;
-  padding: 30px 70px;
+  padding: 40px 70px;
   box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
 }
 
@@ -52,7 +59,7 @@ html, body {
   font-size: 14px;
   letter-spacing: 5.6px;
   margin-left: 3px;
-  color: #aaa;
+  color: var(--light-gray);
   margin-top: 5px;
 }
 .header-infoList {
@@ -96,10 +103,13 @@ i.fa-envelope {
 .content-infoRow {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  border-bottom: 1px dashed #ddd;
   align-items: center;
-  padding: 0 0px 20px 0;
+}
+
+.borderedSpacer {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
 }
 
 .infoRow-education {
@@ -109,15 +119,25 @@ i.fa-envelope {
 
 .infoRow-educationYear {
   font-weight: 400;
+  text-align: right;
 }
 
 .education-header {
   font-weight: 400;
-  color: #666;
+  color: var(--gray);
+  margin-bottom: 5px;
 }
 .education-secondaryHeader {
   font-style: italic;
-  color: #888;
+  color: var(--gray);
+}
+
+.education-jobDescription {
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 24px;
+  font-style: italic;
+  margin-top: 20px;
 }
 
 .content-infoBlock {
@@ -142,10 +162,12 @@ i.fa-envelope {
 .infoBlock-block {
   text-align: justify;
   margin-right: 20px;
+  color: var(--dark-gray);
 }
 
 .infoBlock-block p {
   margin-top: 0;
+  font-size: 15px;
 }
 
 .twoColumn .content {
@@ -200,6 +222,7 @@ i.fa-envelope {
   height: auto;
   transition: 0.3s ease all;
   filter: grayscale(90%) brightness(115%);
+  opacity: 0.9;
 }
 
 .infoBlock-image--big {
