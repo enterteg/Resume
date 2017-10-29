@@ -3,7 +3,320 @@
 <head>
   <meta charset="utf-8">
   <title>Dawid Jagieła - Curriculum Vitae</title>
-  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <style>
+  html, body {
+    font-family: 'Lato';
+    font-weight: 300;
+    background: url('http://api.thumbr.it/whitenoise-361x370.png?background=f9f9f9&noise=a1a1a1&density=100&opacity=9');
+    --gray: #777;
+    --dark-gray: #444;
+    --light-gray: #aaa;
+    --main-color: #00daa2;
+    color: var(--gray);
+  }
+
+  .text--main {
+    color: #01b083 !important;
+  }
+
+  #container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 40px 70px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-infoName {
+    margin-left: 20px;
+  }
+  .header-name {
+    font-size: 40px;
+    color: var(--main-color);
+    font-style: italic;
+  }
+
+  .header-profilePhoto {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+  }
+
+  .header-profilePhoto img {
+    width: 170px;
+    transform: translate(-20%, -10%);
+    height: auto;
+    filter: brightness(110%) saturate(70%);
+  }
+
+  .header-cv {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 5.6px;
+    margin-left: 3px;
+    color: var(--light-gray);
+    margin-top: 5px;
+  }
+  .header-infoList {
+    list-style-type: none;
+    line-height: 30px;
+  }
+
+  .infoList-item {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .infoList-item i {
+    margin-right: 8px;
+    color: var(--main-color);
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  i.fa-envelope {
+    font-size: 14px;
+  }
+
+  .content {
+    margin-top: 50px;
+  }
+
+  .content-header {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .content-languagesListWrapper {
+    display: flex;
+  }
+
+  .content-languagesList {
+    list-style-type: none;
+    font-size: 17px;
+    line-height: 30px;
+    padding-left: 0px;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+  .content-header--right{
+    text-align: right;
+  }
+  .content-header .fa {
+    margin-right: 5px;
+    color: var(--main-color);
+  }
+
+  .content-infoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content-description {
+    line-height: 25px;
+    margin-bottom: 10px;
+  }
+  .borderedSpacer {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ddd;
+  }
+
+  .infoRow-education {
+    line-height: 25px;
+    font-size: 16px;
+  }
+
+  .infoRow-educationYear {
+    font-weight: 400;
+    text-align: right;
+  }
+
+  .education-header {
+    font-weight: 400;
+    color: var(--gray);
+    margin-bottom: 5px;
+  }
+  .education-secondaryHeader {
+    font-style: italic;
+    color: var(--gray);
+  }
+
+  .education-jobDescription {
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 24px;
+    font-style: italic;
+    margin-top: 20px;
+  }
+
+  .content-infoBlock {
+    display: flex;
+    line-height: 26px;
+  }
+
+
+  .content-infoBlock--grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 320px;
+    margin-left: -60px;
+  }
+
+  .infoBlock-row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .infoBlock-block {
+    text-align: justify;
+    margin-right: 20px;
+    color: var(--dark-gray);
+  }
+
+  .infoBlock-block p {
+    margin-top: 0;
+    font-size: 15px;
+  }
+
+  .infoBlock-block--aboutMe {
+    margin-left: 50px;
+  }
+
+  .twoColumn .content {
+    width: 50%;
+  }
+
+  .twoColumn .content:last-child .infoBlock-block {
+    margin-right: 0px;
+  }
+
+  .twoColumn {
+    display: flex;
+  }
+
+  .infoBlock-image {
+    position: relative;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    transition: 0.3s ease all;
+    margin: 3px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .infoBlock-image:hover {
+    z-index: 10;
+    width: 110px;
+    height: 110px;
+    cursor: default;
+  }
+
+  .infoBlock-image:hover .infoBlock-skillImage{
+    filter: grayscale(0%) brightness(110%);
+  }
+
+  .infoBlock-image--big:hover {
+    width: 120px;
+    height: 120px;
+  }
+
+  .infoBlock-image--small:hover {
+    width: 90px;
+    height: 90px;
+  }
+
+  .infoBlock-skillImage {
+    max-width: 80%;
+    height: auto;
+    transition: 0.3s ease all;
+    filter: grayscale(100%) brightness(115%);
+    opacity: 0.9;
+  }
+
+  .infoBlock-image--big {
+    width: 100px;
+    height: 100px;
+  }
+
+  .infoBlock-image--small {
+    width: 60px;
+    height: 60px;
+  }
+
+  #relayImage {
+    top: 28px;
+    left: 8px;
+  }
+
+  #cssImage {
+    top: 60px;
+    right: -35px;
+  }
+
+  #gitImage {
+    top: -30px;
+    left: 30px;
+  }
+
+  #reactImage {
+    top: 15px;
+  }
+
+  #htmlImage {
+    top: 35px;
+    left: 5px;
+  }
+
+  #rubyImage {
+    top: -10px;
+    filter: grayscale(100%) brightness(185%);
+  }
+
+  #rubyImage:hover {
+    filter: grayscale(0%) brightness(100%);
+  }
+
+  .skillImage-jsImage {
+    max-width: 100%;
+  }
+
+  #skillInfo {
+    color: var(--main-color);
+    font-size: 25px;
+    margin-top: 10px;
+    opacity: 0;
+    position: relative;
+    top: 10px;
+    font-weight: 400;
+    height: 40px;
+    text-align: center;
+    margin-left: -30px;
+  }
+
+  .skillInfo-animateContent {
+    top: 0px !important;
+    transition: 0.2s ease-in-out all !important;
+    opacity: 1 !important;
+  }
+  </style>
   <script type="text/javascript">
     window.onload = function() {
       const imageNameValues = {
@@ -88,11 +401,13 @@
         </div>
       </div>
       <div class="education-jobDescription borderedSpacer">
-        Repsonsible for creating mobile apps in React-Native for Android and iOS.
+        Creating mobile apps in <b>React-Native</b> for Android and iOS.
         </br>
-        Learned most popular state management tools as Redux + Saga, Relay and Mobx.
+        Developing responsive web applications in <b>ReactJS</b> based on given designs.
         </br>
-        Took part in developing web application written in ReactJS
+        Communicating directly with clients about product requirements and UX/UI.
+        </br>
+        Learned most popular state management tools as <b>Redux + Saga, Relay and Mobx</b>.
       </div>
       <div class="content-infoRow">
         <div class="infoRow-education">
@@ -104,11 +419,11 @@
         </div>
       </div>
       <div class="education-jobDescription borderedSpacer">
-        Creating mobile apps in React-Native (designs included).</br>
-        Learned React/React-Native, Relay and basics of mobile apps ui/ux.
+        Creating mobile apps in React-Native (UX/UI).</br>
+        Learned <b>React/React-Native</b>, development tools and basics of mobile apps UI/UX.</br>
       </div>
     </section>
-    <section class="content">
+    <section class="content borderedSpacer">
       <header>
         <div class="content-header">
           <i class="fa fa-graduation-cap" aria-hidden="true"></i>
@@ -125,89 +440,100 @@
           2014 - now
         </div>
       </div>
-      <div class="content-infoRow borderedSpacer">
-        <div class="infoRow-education">
-          <div class="education-header">Mathematics and Computer Science</div>
-          <div class="education-secondaryHeader">II High School named after Maria Konopnicka in Nowy Sącz</div>
-        </div>
-        <div class="infoRow-educationYear">
-          2011 - 2014
-        </div>
+      <div class="content-description">
+        <i>
+          Completed courses such as:</br>
+          Javascript + Ruby, Relational Databases, Computer Networking, Introduction to Unix Systems, Reactive Scala.
+        </i>
+        </br>
       </div>
+    <b>Expected graduation:</b> January 2018 (bachelor), June 2019 (master)
     </section>
     <div class="twoColumn">
       <section class="content">
         <header>
           <div class="content-header">
-            <i class="fa fa-user" aria-hidden="true"></i>
-            About me
+            <i class="fa fa-language" aria-hidden="true"></i>
+            Languages
           </div>
-        </header>
-        <div class="content-infoBlock">
-          <div class="infoBlock-block">
-            <p>
-              I am Computer Science student, currently on the last year of engineering studies.
-              I love creating good quality websites and mobile apps.
-            </p>
-            <p>
-              After second year of studies I applied for summer internship in company called Software Mansion and
-              started my intern as React-Native/React developer.
-            </p>
-            <p>I was responsible mostly for creating mobile apps
-              (sometimes app designs were also my responsibility).
-              Also I got opportunity to create some web applications in ReactJS and improve my skills in development tools.
-            </p>
-            <p>
-              I think I have learned a lot during this time and I am ready to share my knowledge with other people.
-            </p>
+          <div class="content-languagesListWrapper">
+            <ul class="content-languagesList">
+              <li><b>Polish</b> - Native</li>
+              <li><b>English</b> - Fluent</li>
+            <ul>
           </div>
-        </section>
-        <section class="content">
-          <header>
-            <div class="content-header content-header--right">
-              <i class="fa fa-cogs" aria-hidden="true"></i>
-              Skills
-            </div>
-          </header>
-          <div class="content-infoBlock content-infoBlock--grid">
-            <div class="infoBlock-row">
-              <div class="infoBlock-image" id="relayImage">
-                <img class="infoBlock-skillImage" src="https://seeklogo.com/images/R/relay-logo-8CFB4CC1A2-seeklogo.com.png" />
+            <header>
+              <div class="content-header">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                Programming skills
               </div>
-              <div class="infoBlock-image" id="reduxImage">
-                <img class="infoBlock-skillImage" src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png" />
+            </header>
+            <div class="content-infoBlock content-infoBlock--grid">
+              <div class="infoBlock-row">
+                <div class="infoBlock-image" id="relayImage">
+                  <img class="infoBlock-skillImage" src="https://seeklogo.com/images/R/relay-logo-8CFB4CC1A2-seeklogo.com.png" />
+                </div>
+                <div class="infoBlock-image" id="reduxImage">
+                  <img class="infoBlock-skillImage" src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png" />
+                </div>
+                <div class="infoBlock-image infoBlock-image--small" id="htmlImage">
+                  <img class="infoBlock-skillImage" src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png" />
+                </div>
               </div>
-              <div class="infoBlock-image infoBlock-image--small" id="htmlImage">
-                <img class="infoBlock-skillImage" src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png" />
+              <div class="infoBlock-row">
+                <div class="infoBlock-image infoBlock-image--small" id="cssImage">
+                  <img class="infoBlock-skillImage" src="https://maxcdn.icons8.com/Share/icon/Logos//css31600.png" />
+                </div>
+                <div class="infoBlock-image infoBlock-image--small" id="mobxImage">
+                  <img class="infoBlock-skillImage" src="https://www.akawebdesign.com/wp-content/uploads/2017/08/mobx-logo-0C59CBBAD9-seeklogo.com_.png" />
+                </div>
+                <div class="infoBlock-image infoBlock-image--big" id="jsImage">
+                  <img class="infoBlock-skillImage skillImage-jsImage" src="https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png" />
+                </div>
+                <div class="infoBlock-image infoBlock-image--big" id="reactImage">
+                  <img class="infoBlock-skillImage" src="https://react-mdl.github.io/react-mdl/react.svg" />
+                </div>
               </div>
-            </div>
-            <div class="infoBlock-row">
-              <div class="infoBlock-image infoBlock-image--small" id="cssImage">
-                <img class="infoBlock-skillImage" src="https://maxcdn.icons8.com/Share/icon/Logos//css31600.png" />
-              </div>
-              <div class="infoBlock-image infoBlock-image--small" id="mobxImage">
-                <img class="infoBlock-skillImage" src="https://www.akawebdesign.com/wp-content/uploads/2017/08/mobx-logo-0C59CBBAD9-seeklogo.com_.png" />
-              </div>
-              <div class="infoBlock-image infoBlock-image--big" id="jsImage">
-                <img class="infoBlock-skillImage skillImage-jsImage" src="https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png" />
-              </div>
-              <div class="infoBlock-image infoBlock-image--big" id="reactImage">
-                <img class="infoBlock-skillImage" src="https://react-mdl.github.io/react-mdl/react.svg" />
-              </div>
-            </div>
-            <div class="infoBlock-row">
-              <div class="infoBlock-image infoBlock-image--small" id="gitImage">
-                <img class="infoBlock-skillImage" src="https://git-scm.com/images/logos/logomark-orange@2x.png" />
-              </div>
-              <div class="infoBlock-image" id="jqueryImage">
-                <img class="infoBlock-skillImage" src="https://uploads.toptal.io/blog/category/logo/40/jquery.png" />
-              </div>
-              <div class="infoBlock-image infoBlock-image--small" id="rubyImage">
-                <img class="infoBlock-skillImage" src="https://seeklogo.com/images/R/ruby-logo-087AF79367-seeklogo.com.jpg" />
+              <div class="infoBlock-row">
+                <div class="infoBlock-image infoBlock-image--small" id="gitImage">
+                  <img class="infoBlock-skillImage" src="https://git-scm.com/images/logos/logomark-orange@2x.png" />
+                </div>
+                <div class="infoBlock-image" id="jqueryImage">
+                  <img class="infoBlock-skillImage" src="https://uploads.toptal.io/blog/category/logo/40/jquery.png" />
+                </div>
+                <div class="infoBlock-image infoBlock-image--small" id="rubyImage">
+                  <img class="infoBlock-skillImage" src="https://seeklogo.com/images/R/ruby-logo-087AF79367-seeklogo.com.jpg" />
+                </div>
               </div>
             </div>
             <div id="skillInfo" />
-          </section>
+      </section>
+          <section class="content">
+            <header>
+              <div class="content-header  content-header--right">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                About me
+              </div>
+            </header>
+            <div class="content-infoBlock">
+              <div class="infoBlock-block infoBlock-block--aboutMe">
+                <p>
+                  I am Computer Science student, currently on the last year of engineering studies.
+                  I love creating good quality websites and mobile apps.
+                </p>
+                <p>
+                  After second year of studies I applied for summer internship in company called Software Mansion and
+                  started my intern as React-Native/React developer.
+                </p>
+                <p>I was responsible mostly for creating mobile apps
+                  (sometimes app designs were also my responsibility).
+                  Also I got opportunity to create some web applications in ReactJS and improve my skills in development tools.
+                </p>
+                <p>
+                  I think I have learned a lot during this time and I am ready to share my knowledge with other people.
+                </p>
+              </div>
+            </section>
         </div>
       </div>
     </body>
