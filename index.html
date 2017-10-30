@@ -261,6 +261,12 @@
     height: 60px;
   }
 
+  .consent {
+    text-align: center;
+    font-size: 10px;
+    color: var(--light-gray);
+  }
+
   #relayImage {
     top: 28px;
     left: 8px;
@@ -318,38 +324,52 @@
   }
   </style>
   <script type="text/javascript">
-    window.onload = function() {
-      const imageNameValues = {
-        relayImage: 'Relay',
-        reduxImage: 'Redux',
-        htmlImage: 'HTML 5',
-        cssImage: 'CSS 3',
-        mobxImage: 'MOBX',
-        jsImage: 'JavaScript',
-        reactImage: 'React',
-        gitImage: 'Git',
-        jqueryImage: 'JQuery',
-        rubyImage: 'Ruby/RubyOnRails',
-      }
-      const images = document.getElementsByClassName('infoBlock-image')
-      const skillInfoDiv = document.getElementById('skillInfo')
-      function handleMouseOver(img) {
-        skillInfoDiv.innerHTML = imageNameValues[img.id]
-        setTimeout(() => {
-          skillInfoDiv.classList.add('skillInfo-animateContent')
-        }, 50)
-      }
+  window.onload = function() {
+  const imageNameValues = {
+    relayImage: 'Relay',
+    reduxImage: 'Redux',
+    htmlImage: 'HTML 5',
+    cssImage: 'CSS 3',
+    mobxImage: 'MOBX',
+    jsImage: 'JavaScript',
+    reactImage: 'React',
+    gitImage: 'Git',
+    jqueryImage: 'JQuery',
+    rubyImage: 'Ruby/RubyOnRails'
+  }
+  const images = document.getElementsByClassName(
+    'infoBlock-image'
+  )
+  const skillInfoDiv = document.getElementById(
+    'skillInfo'
+  )
+  function handleMouseOver(img) {
+    skillInfoDiv.innerHTML =
+      imageNameValues[img.id]
+    setTimeout(() => {
+      skillInfoDiv.classList.add(
+        'skillInfo-animateContent'
+      )
+    }, 50)
+  }
 
-      function handleMouseOut(img) {
-        skillInfoDiv.innerHTML = ''
-        skillInfoDiv.classList.remove('skillInfo-animateContent')
-      }
-      Array.from(images).forEach(img => {
-        img.addEventListener('mouseover', () => handleMouseOver(img))
-        img.addEventListener('mouseleave', handleMouseOut)
-      })
-    }
-  </script>
+  function handleMouseOut(img) {
+    skillInfoDiv.innerHTML = ''
+    skillInfoDiv.classList.remove(
+      'skillInfo-animateContent'
+    )
+  }
+  Array.from(images).forEach(img => {
+    img.addEventListener('mouseover', () =>
+      handleMouseOver(img)
+    )
+    img.addEventListener(
+      'mouseleave',
+      handleMouseOut
+    )
+  })
+}
+</script>
   <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -534,6 +554,9 @@
                 </p>
               </div>
             </section>
+        </div>
+        <div class="consent">
+          I hereby give consent for my personal data included in the job offer to be processed for the purposes of recruitment under the Data Protection Act 1997 (Dz. U. no. 133, item 883)
         </div>
       </div>
     </body>
