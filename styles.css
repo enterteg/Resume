@@ -48,11 +48,9 @@ html, body {
 }
 
 .header-profilePhoto img {
-  width: 170px;
+  width: 100px;
   object-fit: cover;
-  transform: translate(-20%, -10%);
   height: auto;
-  filter: brightness(110%) saturate(70%);
 }
 
 .header-cv {
